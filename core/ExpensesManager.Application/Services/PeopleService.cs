@@ -22,7 +22,7 @@ public sealed class PeopleService(IPersonRepository people)
         return person is null ? null : new PersonResponse(person.Id, person.Name, person.Age);
     }
 
-    public async Task<(IReadOnlyCollection<PersonResponse> Items, int totalItems)> ListAsync(string? name, int? minAge, int maxAge,
+    public async Task<(IReadOnlyCollection<PersonResponse> Items, int totalItems)> ListAsync(string? name, int? minAge, int? maxAge,
         int page, int pageSize, CancellationToken token)
     {
         var paged = await _people.ListAsync(name, minAge, maxAge, page, pageSize, token);
