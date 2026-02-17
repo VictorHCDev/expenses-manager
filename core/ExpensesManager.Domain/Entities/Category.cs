@@ -13,7 +13,7 @@ public sealed class Category : BaseEntity
 
     public Category(string description, CategoryPurpose purpose)
     {
-        ValidationHelper.SetDescription(description);
+        Description = ValidationHelper.SetDescription(description);
         Purpose = purpose;
     }
 
